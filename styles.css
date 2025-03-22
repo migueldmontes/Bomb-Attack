@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    gap: 20px;
+}
+
+.bomb {
+    width: 150px;
+    height: 150px;
+    background-image: url('bomb.jpg'); /* Imagen de la bomba */
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    transition: background-image 0.3s ease, opacity 0.3s ease;
+}
+
+/* Al pasar el mouse por encima de las bombas, las que explotan cambian de imagen */
+.bomb:hover {
+    background-image: url('explosion.jpg'); /* Imagen de la explosión */
+}
+
+/* El extintor o agua en la bomba 5 */
+#bomb5:hover {
+    background-image: url('extintor.jpg'); /* Imagen de agua o extintor */
+}
+
+/* Opcional: Añadir opacidad para hacer más interesante el efecto de explosión */
+.bomb:hover {
+    opacity: 0.7; /* Cambia la opacidad de la bomba al pasar el mouse */
+}
+
+/* Opcional: Si quieres que la bomba desaparezca con el :hover */
+.bomb:active {
+    visibility: hidden; /* Hace que la bomba desaparezca al hacer clic */
+}
